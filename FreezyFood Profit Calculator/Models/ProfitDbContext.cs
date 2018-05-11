@@ -11,8 +11,8 @@ namespace FreezyFood_Profit_Calculator.Models
         public ProfitDbContext() : base("name=ProfitDbContext")
         {
         }
-        public System.Data.Entity.DbSet<Unit> Units { get; set; }
-
+        public DbSet<Unit> Units { get; set; }
+        public DbSet<Product> Products { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -20,6 +20,6 @@ namespace FreezyFood_Profit_Calculator.Models
                 .HasRequired(p => p.Product);
         }
 
-        public System.Data.Entity.DbSet<FreezyFood_Profit_Calculator.Models.Product> Products { get; set; }
+        
     }
 }
