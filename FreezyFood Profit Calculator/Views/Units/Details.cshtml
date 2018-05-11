@@ -1,0 +1,58 @@
+﻿@model FreezyFood_Profit_Calculator.Models.Unit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Unit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SaleInGrams)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaleInGrams)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalculatedProfit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalculatedProfit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

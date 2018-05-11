@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FreezyFood_Profit_Calculator.Models.Unit>
+
+@{
+    ViewBag.Title = "Ukupan Profit";
+}
+
+<h2>Ukupan Profit</h2>
+
+
+
+@*<div class="card" style="width: 20rem; margin-top:20px">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Ukupan Profit: @Html.Raw(ViewBag.Profit)</li>
+        </ul>
+    </div>*@
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaleInGrams)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalculatedProfit)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ProfitPercentage)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaleInGrams)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalculatedProfit)
+            </td>
+
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>*@
+        </tr>
+    }
+
+    <tr>
+        <td></td>
+        <td><p class="text-right" style="margin-top:10px">Ukupan profit: </p></td>
+        <td>
+            <div class="card" style="width: 20rem; ">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">@Html.Raw(ViewBag.Profit)</li>
+                </ul>
+            </div>
+        </td>
+
+    </tr>
+</table>
