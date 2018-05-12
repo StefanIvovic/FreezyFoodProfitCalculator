@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using FreezyFood_Profit_Calculator.AppContextMigration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -23,6 +24,12 @@ namespace FreezyFood_Profit_Calculator.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            base.OnModelCreating(modelBuilder);
         }
 
         public static ApplicationDbContext Create()

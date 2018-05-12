@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FreezyFood_Profit_Calculator.Migrations;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,8 +14,11 @@ namespace FreezyFood_Profit_Calculator.Models
         }
         public DbSet<Unit> Units { get; set; }
         public DbSet<Product> Products { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ProfitDbContext, Configuration>());
+
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Unit>()
                 .HasRequired(p => p.Product);

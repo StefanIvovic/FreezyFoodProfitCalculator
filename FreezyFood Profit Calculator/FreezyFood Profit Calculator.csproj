@@ -193,6 +193,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppContextMigration\201805120729499_InitialCreate.cs" />
+    <Compile Include="AppContextMigration\201805120729499_InitialCreate.Designer.cs">
+      <DependentUpon>201805120729499_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppContextMigration\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -344,6 +349,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppContextMigration\201805120729499_InitialCreate.resx">
+      <DependentUpon>201805120729499_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805100628125_init.resx">
       <DependentUpon>201805100628125_init.cs</DependentUpon>
     </EmbeddedResource>

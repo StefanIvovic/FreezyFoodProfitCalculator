@@ -1,5 +1,8 @@
 namespace FreezyFood_Profit_Calculator.Migrations
 {
+    using FreezyFood_Profit_Calculator.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +29,10 @@ namespace FreezyFood_Profit_Calculator.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+           
+
         }
     }
 }
