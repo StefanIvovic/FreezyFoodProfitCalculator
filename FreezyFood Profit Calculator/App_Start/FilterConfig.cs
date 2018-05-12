@@ -8,6 +8,9 @@ namespace FreezyFood_Profit_Calculator
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            //application level autorization
+            filters.Add(new AuthorizeAttribute { Roles = "Admin" });
         }
     }
 }
