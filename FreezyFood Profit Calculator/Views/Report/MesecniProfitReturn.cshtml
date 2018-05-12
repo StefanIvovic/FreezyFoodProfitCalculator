@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<FreezyFood_Profit_Calculator.Models.Unit>
 
-@*<div class="card" style="width: 20rem; margin-top:20px">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Ukupan Profit: @Html.Raw(ViewBag.Profit)</li>
-        </ul>
-    </div>*@
-<h2>Ukupan profit za dan</h2>
+@{
+    ViewBag.Title = "Mesecni Profit";
+}
+
+<h2>Mesecni Profit</h2>
 
 <table class="table">
     <tr>
@@ -55,6 +54,6 @@
                 </ul>
             </div>
         </td>
-        
+
     </tr>
 </table>

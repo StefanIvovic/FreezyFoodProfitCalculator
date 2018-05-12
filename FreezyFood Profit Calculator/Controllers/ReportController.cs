@@ -1,4 +1,5 @@
 ﻿using FreezyFood_Profit_Calculator.Models;
+using FreezyFood_Profit_Calculator.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,16 +48,21 @@ namespace FreezyFood_Profit_Calculator.Controllers
             return View(units);
         }
 
-        //public ActionResult UkupanProfitReturn([Bind(Include = "DateOfPurchase")] Unit unit)
-        //{
-        //    var units = db.Units.ToList();
-        //    decimal profitSum = 0.00m;
-        //    foreach (var item in units)
-        //    {
-        //        profitSum += item.CalculatedProfit;
-        //    }
-        //    ViewBag.Profit = profitSum;
-        //    return View(units);
-        //}
+        public ActionResult MesecniProfit()
+        {
+            return View();
+        }
+        
+        public ActionResult MesecniProfitReturn([Bind(Include = "DatumOd, DatumDo")] DateVM datum)
+        {
+            var units = db.Units.ToList();
+            decimal profitSum = 0.00m;
+            foreach (var item in units)
+            {
+                profitSum += item.CalculatedProfit;
+            }
+            ViewBag.Profit = profitSum;
+            return View(units);
+        }
     }
 }
