@@ -64,19 +64,18 @@ namespace FreezyFood_Profit_Calculator.Controllers
                 unit.ProductName = proizvod.ProductName;
                 db.Units.Add(unit);
                 db.SaveChanges();
-                switch(submit)
-                {
-                    case "Save":
-                        return RedirectToAction("Index");
-                    case "Save and stay":
-                        return RedirectToAction("Create");
-                }
-                
-            }
+                if (submit == "Save")
+                    return RedirectToAction("Index");
+                if (submit == "Save and stay")
+                    return RedirectToAction("Create");
 
+            }
             ViewBag.ProductId = new SelectList(db.Products, "Id", "ProductName", unit.ProductId);
             return View(unit);
         }
+
+
+
 
         // GET: Units/Edit/5
         public ActionResult Edit(int? id)
